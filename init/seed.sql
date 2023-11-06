@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS handy.reviews (
     job_id INT NOT NULL,
     rating INT NOT NULL,
     comment TEXT,
+    title VARCHAR(256),
     review_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (reviewed_by_user_id) REFERENCES handy.users (user_id),
     FOREIGN KEY (reviewed_user_id) REFERENCES handy.users (user_id),
@@ -153,11 +154,11 @@ VALUES
 (3, 6, 3, 1300.00, 'Contract terms here', current_timestamp, current_timestamp, current_timestamp, 'signed');
 
 -- Insert into reviews (assuming user IDs are known)
-INSERT INTO handy.reviews (reviewed_by_user_id, reviewed_user_id, job_id, rating, comment, review_date)
+INSERT INTO handy.reviews (reviewed_by_user_id, reviewed_user_id, job_id, rating, title, comment, review_date)
 VALUES
-(1, 4, 1, 5, 'Great work!', current_timestamp),
-(2, 5, 2, 4, 'Very professional', current_timestamp),
-(3, 6, 3, 5, 'Excellent craftsmanship!', current_timestamp);
+(1, 4, 1, 5, 'Good handyman', 'Great work!', current_timestamp),
+(2, 5, 2, 4, 'My review', 'Very professional', current_timestamp),
+(3, 6, 3, 5, 'My review title','Excellent craftsmanship!', current_timestamp);
 
 -- Insert into invoices (assuming contract IDs are known)
 INSERT INTO handy.invoices (contract_id, amount, issue_date, due_date, status)

@@ -6,12 +6,17 @@ spring:
     url: jdbc:postgresql://localhost:5432/handy
     username: fabio
     driverClassName: org.postgresql.Driver
+    schema: handy
+    hikari:
+      schema: handy
   jpa:
     hibernate:
       ddl-auto: none #create
+
     properties:
       database: POSTGRES
       hibernate:
-        #dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+        default_schema: handy
     show-sql: true

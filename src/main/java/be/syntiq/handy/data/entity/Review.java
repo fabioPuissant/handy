@@ -21,8 +21,9 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID reviewId;
     private String title;
-    private String description;
     private LocalDateTime reviewDate;
+    @NotEmpty
+    private String comment;
 
     @ManyToOne
     @JoinColumn(name = "reviewed_user_id")
@@ -41,6 +42,5 @@ public class Review {
     @Column(name = "rating")
     private int rating;
 
-    @NotEmpty
-    private String comment;
+
 }
