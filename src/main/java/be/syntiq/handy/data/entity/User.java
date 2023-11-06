@@ -44,12 +44,12 @@ public class User {
     @Column(name = "user_status")
     private String userStatus;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private Set<Review> reviews;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private Set<JobPost> jobPosts;
 
-// this needs to work
-
+    @OneToMany
+    private Set<Bid> bids;
 }

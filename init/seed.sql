@@ -36,8 +36,7 @@ CREATE TABLE IF NOT EXISTS handy.job_posts (
     estimated_budget DECIMAL(10, 2),
     actual_cost DECIMAL(10, 2),
     FOREIGN KEY (posted_by_user_id) REFERENCES handy.users (user_id),
-    FOREIGN KEY (category_id) REFERENCES handy.categories (category_id),
-
+    FOREIGN KEY (category_id) REFERENCES handy.categories (category_id)
 );
 
 -- Handyman Details Table

@@ -41,7 +41,7 @@ public class JobPost {
     private Bid acceptedBid;
 
     @OneToMany
-    @JoinColumn(name = "bids")
+    @JoinColumn(name = "job_post")
     private Set<Bid> bids;
 
     private String location;
